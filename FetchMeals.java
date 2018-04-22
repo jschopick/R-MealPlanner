@@ -52,12 +52,14 @@ public class FetchMeals {
 			}
 
 			// Prints all menu items by category [For Testing]
-			// System.out.println("Breakfast Items:");
-			// printVector(breakfast);
-			// System.out.println("Lunch Items:");
-			// printVector(lunch);
-			// System.out.println("Dinner Items:");
-			// printVector(dinner);
+			System.out.println("Breakfast Items:\n");
+			printVector(breakfast);
+			System.out.println();
+			System.out.println("Lunch Items:\n");
+			printVector(lunch);
+			System.out.println();
+			System.out.println("Dinner Items:\n");
+			printVector(dinner);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -65,9 +67,9 @@ public class FetchMeals {
 	}
 
 	// Prints the list of all meals [For Testing]
-	// private static void printVector(Vector<String> v) {
-	// 	 for (int i = 0; i < v.size(); i++) {
-	// 		 System.out.println(v.elementAt(i));
-	// 	}	
-	// }
+	private static void printVector(Vector<String> v) {
+		 for (int i = 0; i < v.size(); i++) {
+			 System.out.println(v.elementAt(i));
+		}	
+	}
 }
