@@ -32,9 +32,13 @@ public class mealPlannerComplete {
         
         // Print the food recommendations! Done!
         System.out.println("Protein Reccomendation: " + calorieCalc(targetCal / 4, proteinNcarbsVectors.getKey(), dataSet));
+        System.out.println();
         System.out.println("Carbs Reccomendation: " + calorieCalc(targetCal / 4, proteinNcarbsVectors.getValue(), dataSet));
-        System.out.println("Fruit Reccomendation: " );
-        System.out.println("Veggies Reccomendation: " );
+        System.out.println();
+        System.out.println("Fruit Options(Keep below 200 Calories!): " + fruitFunction());
+        System.out.println();
+        System.out.println("Veggie Options(Keep around 100 Calories!): " + veggieFunction());
+        System.out.println();
         System.out.println("Add dressing if desired for about 100 Calories.");
     }
 
@@ -45,16 +49,16 @@ public class mealPlannerComplete {
         Vector<String> protein = new Vector<>();
         Vector<String> carbs = new Vector<>();
         
-        System.out.println("Today's Menu: " + todayItems + "\n");
-        System.out.println("data set: " + dataSet);
+        // System.out.println("Today's Menu: " + todayItems + "\n");
+        // System.out.println("data set: " + dataSet);
         for(String value : todayItems) {
-            System.out.println("Current Value: " + value);
-            System.out.println("Data Set Key: " + dataSet.get(value));
+            // System.out.println("Current Value: " + value);
+            // System.out.println("Data Set Key: " + dataSet.get(value));
             if((dataSet.get(value).getKey()) == 1) {
-                System.out.println("Protein Key: " + dataSet.get(value));
+                // System.out.println("Protein Key: " + dataSet.get(value));
                 protein.add(value);
             } else if(dataSet.get(value).getKey() == 2) {
-                System.out.println("Carbs Key: " + dataSet.get(value).getKey());
+                // System.out.println("Carbs Key: " + dataSet.get(value).getKey());
                 carbs.add(value);
             } else {
                 System.out.println("Food item " + value + " not found in data set");
@@ -113,7 +117,7 @@ public class mealPlannerComplete {
 					}
 				}
             }
-            System.out.println("Dinner: " + dinner);
+            // System.out.println("Dinner: " + dinner);
 
             // Return the vector of the correct meal time
             System.out.println("Breakfast, Lunch, or Dinner?");
@@ -184,10 +188,9 @@ public class mealPlannerComplete {
 	}
 
     // Generates a list of fruits and vegetables offered makes a recommendation
-    private static void fruitNveggieGenerator(String[] args) {
+    private static String fruitFunction() {
+
         Map<String, Integer> fruits = new HashMap<>();
-        Map<String, Integer> veggies = new HashMap<>();
-        Map<String, Integer> dressing = new HashMap<>();
 
         // Populate the fruit menu
         fruits.put("Apple", 95);
@@ -196,6 +199,16 @@ public class mealPlannerComplete {
         fruits.put("Cantaloupe", 53);
         fruits.put("Pineapple", 82);
 
+        return "Apple - " + fruits.get("Apple") + " Calories, Banana - " + fruits.get("Banana")
+                + " Calories,\nHoneydew - " + fruits.get("Honeydew") + " Calories, Cantaloupe - "
+                + fruits.get("Cantaloupe") + " Calories, Pineapple - " + fruits.get("Pineapple")
+                + " Calories";
+    }
+
+    // Generates a list of fruits and vegetables offered makes a recommendation
+    private static String veggieFunction() {
+        Map<String, Integer> veggies = new HashMap<>();
+
         // Populate the veggie menu
         veggies.put("Broccoli", 31);
         veggies.put("Cucumbers", 16);
@@ -203,12 +216,12 @@ public class mealPlannerComplete {
         veggies.put("Lettuce", 15);
         veggies.put("Spinach", 23);
 
-        // Populate the salad dressing menue
-        dressing.put("Ranch Dressing", 145);
-        dressing.put("Italian Dressing", 120);
-
+        return "Broccoli - " + veggies.get("Broccoli") + " Calories, Cucumbers - " + veggies.get("Cucumbers")
+        + " Calories,\nCarrots - " + veggies.get("Carrots") + " Calories, Lettuce - "
+        + veggies.get("Lettuce") + " Calories, Spinach - " + veggies.get("Spinach")
+        + " Calories";
     }
-    
+
     // Find the closest food item in protein to 1/4 of the target calorie amount to get a balanced meal
     private static String calorieCalc(int categoryCal, Vector<String> food, Map<String, 
                                       Pair<Integer, Integer> > data) {
