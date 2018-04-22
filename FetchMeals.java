@@ -28,7 +28,7 @@ public class FetchMeals {
 						lunch.add(tmp);
 						tmp = foodList.getElementsByTag("a").first().text();
 						lunch.add(tmp);
-					}else {
+					} else {
 						dinner.add(tmp);
 						tmp = foodList.getElementsByTag("a").first().text();
 						dinner.add(tmp);
@@ -37,30 +37,31 @@ public class FetchMeals {
 					meal = meal + 1;
 					if(meal == 2) {
 						lunch.add(tmp);
-					}else {
+					} else {
 						dinner.add(tmp);
 					}
 				} else {
 					if(meal == 1) {
 						breakfast.add(tmp);
-					}else if(meal == 2) {
+					} else if(meal == 2) {
 						lunch.add(tmp);
-					}else {
+					} else {
 						dinner.add(tmp);
 					}
 				}
 			}
-		
-		System.out.println("Breakfast Items:");
-		printVector(breakfast);
-		System.out.println("Lunch Items:");
-		printVector(lunch);
-		System.out.println("Dinner Items:");
-		printVector(dinner);
+
+			// Prints all menu items by category [For Testing]
+			// System.out.println("Breakfast Items:");
+			// printVector(breakfast);
+			// System.out.println("Lunch Items:");
+			// printVector(lunch);
+			// System.out.println("Dinner Items:");
+			// printVector(dinner);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	// Prints the list of all meals [For Testing]
