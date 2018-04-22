@@ -23,7 +23,7 @@ public class createJavaMap {
                 dataSet.put(food[0],temp);
                 
             }
-            
+        
         } catch (IOException e) {
             e.printStackTrace();
         }
