@@ -81,7 +81,7 @@ public class mealGenerator {
         fruits.put("Cantaloupe", 53);
         fruits.put("Pineapple", 82);
 
-         // Populate the fruit menu [For Testing]
+        // Populate the fruit menu [For Testing]
         fruits.put("Apple", 95);
         fruits.put("Banana", 105);
         fruits.put("Honeydew", 61);
