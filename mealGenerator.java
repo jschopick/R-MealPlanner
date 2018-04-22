@@ -70,25 +70,25 @@ public class mealGenerator {
     }
 
     // Generates a list of fruits and vegetables offered makes a recommendation
-    // private static void fruitNveggieGenerator(String[] args) {
-    //     Map<String, Pair<Integer, Integer> > fruits = new HashMap<>();
-    //     Map<String, Pair<Integer, Integer> > veggies = new HashMap<>();
+    private static void fruitNveggieGenerator(String[] args) {
+        Map<String, Integer> fruits = new HashMap<>();
+        Map<String, Integer> veggies = new HashMap<>();
 
-    //     // Populate the current menu [For Testing]
-    //     fruits.put("Apple");
-    //     fruits.put("Banana");
-    //     fruits.put("Honeydew");
-    //     fruits.put("Cantaloupe");
-    //     fruits.put("Pineapple");
+        // Populate the fruit menu [For Testing]
+        fruits.put("Apple", 95);
+        fruits.put("Banana", 105);
+        fruits.put("Honeydew", 61);
+        fruits.put("Cantaloupe", 53);
+        fruits.put("Pineapple", 82);
 
-    //     // Create the pairs to be used in the map [For Testing]
-    //     Pair<Integer, Integer> chkn = new Pair<>(1, 210);
-    //     Pair<Integer, Integer> cboy = new Pair<>(1, 300);
-    //     Pair<Integer, Integer> steak = new Pair<>(1, 150);
-    //     Pair<Integer, Integer> pasta = new Pair<>(2, 350);
-    //     Pair<Integer, Integer> rice = new Pair<>(2, 250);
-    //     Pair<Integer, Integer> toast = new Pair<>(2, 100);
-    // }
+         // Populate the fruit menu [For Testing]
+        fruits.put("Apple", 95);
+        fruits.put("Banana", 105);
+        fruits.put("Honeydew", 61);
+        fruits.put("Cantaloupe", 53);
+        fruits.put("Pineapple", 82);
+
+    }
     
     // Find the closest food item in protein to 1/4 of the target calorie amount to get a balanced meal
     private static String calorieCalc(int categoryCal, Vector<String> food, Map<String, 
